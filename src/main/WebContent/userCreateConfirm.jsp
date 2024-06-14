@@ -8,9 +8,8 @@
     <meta http-equiv="Content-Style-Type" content="text/css"/>
     <meta http-equiv="Content-Script-Type" content="text/javascript"/>
     <meta http-equiv="imagetoolbar" content="no"/>
-    <meta name="description" content~""/>
     <meta name="keywords" content=""/>
-    <title>UserCreate画面</title>
+    <title>userCreateConfirm画面</title>
     
     <style type="text/css">
     
@@ -49,51 +48,61 @@
         height:80px;
         background-color:black;clear:both;
       }
-      </style>  
+    
+    </style>
   </head>
   <body>
     <div id="header">
       <div id="pr">
       </div>
     </div>
-    <div id="main">
-      <div id="top">
-        <p>UserCreate</p>
-      </div>
-        <s:if test="errorMessage!=''">
-          <s:property value="errorMessage" escape="false"/>
-        </s:if>
-        <table>
-        <s:form action="UserCreateConfirmAction">
-          <tr>
-            <td>
-              <label>ログインID:</label>
-              <input type="text" name="loginUserId" value=""/>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label>ログインPASS:</label>
-              <input type="text" name="loginPassword" value=""/>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label>ユーザー名</label>
-              <input type="text" name="userName" value=""/>
-            </td>
-          </tr>
-          <s:submit value="登録"/>
-          </s:form>     
-        </table>
-        <div>
-          <span>前画面に戻る場合は</span>
-          <a href='<s:url action="HomeAction"/>'>こちら</a>
+      <div id="main">
+        <div id="top">
+          <p>UserCreateConfirm</p>  
         </div>
+        <div>
+        <h3>登録する内容は以下でよろしいですか。</h3>
+        <table>
+          <s:form action="UserCreateCompleteAction">
+            <tr id="box">
+              <td>
+                <label>ログインID</label>
+              </td>
+              <td>
+                <s:property value="loginUserId" escape="false"/>
+              </td>
+            </tr>
+            
+            <tr id="box">
+              <td>
+                <label>ログインPASS:</label>
+              </td>
+              <td>
+                <s:property value="loginPassword" escape="false"/>
+              </td>
+              
+            </tr>
+            <tr id="box">
+              <td>
+                <label>ユーザー名:</label>
+              </td>
+              <td>
+                <s:property value="userName" escape="false"/>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <s:submit value="完了"/>
+              </td>
+            </tr>
+          </s:form>
+        </table>
+        </div>
+      </div>
     </div>
     <div id="footer">
-          <div id="pr">
-          </div>
-        </div>
+      <div id="pr">
+      </div>
+    </div>
   </body>
 </html>
