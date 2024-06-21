@@ -34,7 +34,7 @@
      </action>
      
      <action name="BuyItemConfirmAction" class="com.diworksdev.template.action.BuyItemConfirmAction" method="execute">
-       <result name="sucess">buyItemComplete.jsp</result>
+       <result name="success">buyItemComplete.jsp</result>
      </action>
    </package>
      
