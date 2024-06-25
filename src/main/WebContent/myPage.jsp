@@ -42,9 +42,12 @@
         height:500px;
         text-align:center;
       }
-      #footer{
+     #footer{
         width:100%;
         height:80px;
+        position:absolute;
+        bottom:0;
+        box-sizing:border-box;
         background-color:black;clear:both;
       }
       </style>
